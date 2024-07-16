@@ -1,0 +1,31 @@
+def word_counter():
+    try:
+        # Taking input from the user
+        user_input = input("Please enter a string: ")
+        
+        # Checking if the input is empty
+        if not user_input:
+            print("No input provided. Please enter a valid string.")
+            return
+        
+        # Replace punctuation with spaces
+        punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        for char in user_input:
+            if char in punctuations:
+                user_input = user_input.replace(char, " ")
+                
+        # Splitting the input string into words
+        words = user_input.split()
+        
+        # Counting the number of words
+        word_count = len(words)
+        
+        # Returning the word count
+        print(f"Total number of words: {word_count}")
+    
+    except Exception as e:
+        # Handling any unexpected errors
+        print(f"An error occurred: {e}")
+
+# Running the word counter function
+word_counter()
